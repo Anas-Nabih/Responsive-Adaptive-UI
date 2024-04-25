@@ -1,30 +1,24 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/views/dashboard_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(DevicePreview(
+    enabled: false,
+    builder: (context) => const ResponsiveDashBoard(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class ResponsiveDashBoard extends StatelessWidget {
+  const ResponsiveDashBoard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Responsive Adaptive UI',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(),
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      home: const DashBoradView(),
     );
   }
 }
-
-class ResponsiveAdaptiveUI extends StatelessWidget {
-  const ResponsiveAdaptiveUI();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Center(
-      child: Text("Responsive Adaptive UI"),
-    ),);
-  }
-}
-

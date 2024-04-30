@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_adaptive_ui/utils/app_colors.dart';
 
@@ -23,7 +22,7 @@ abstract class AppStyles {
 
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
+      color: AppColors.navyBlue,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w500,
@@ -41,7 +40,7 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
+      color: AppColors.navyBlue,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
@@ -50,7 +49,7 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold20(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
+      color: AppColors.navyBlue,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,

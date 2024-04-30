@@ -18,13 +18,18 @@ class DrawerFooterItems extends StatelessWidget {
       child: Column(
         children: [
           Expanded(child: SizedBox()),
-          DrawerItem(drawerItemModel: DrawerItemModel(image: Assets.imagesSettings, title: "Settings"), isActive: false),
-          DrawerItem(drawerItemModel: DrawerItemModel(image: Assets.imagesLogout, title: "Logout account"), isActive: false),
-
+          DrawerItem(
+              drawerItemModel: DrawerItemModel(
+                  image: Assets.imagesSettings, title: "Settings"),
+              isActive: false),
+          DrawerItem(
+              drawerItemModel: DrawerItemModel(
+                  image: Assets.imagesLogout, title: "Logout account"),
+              isActive: false),
           SizedBox(
             height: 48,
           )
-         ],
+        ],
       ),
     );
   }

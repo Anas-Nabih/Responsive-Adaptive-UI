@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_adaptive_ui/utils/app_colors.dart';
 
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {
@@ -13,7 +14,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF4EB7F2),
+      color: AppColors.activeColor,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,

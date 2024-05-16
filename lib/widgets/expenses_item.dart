@@ -12,7 +12,7 @@ class ExpensesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return activeExpenses
-        ? ActiveExpensesItem(itemModel: itemModel)
-        : InActiveExpensesItem(itemModel: itemModel);
+        ? ActiveExpensesItem(itemModel: itemModel,isSelected: activeExpenses,)
+        : InActiveExpensesItem(itemModel: itemModel,isSelected: activeExpenses,);
   }
 }

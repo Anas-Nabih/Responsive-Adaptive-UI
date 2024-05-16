@@ -6,9 +6,11 @@ class AllExpensesItemHeader extends StatelessWidget {
   const AllExpensesItemHeader({
     super.key,
     required this.image,
+    required this.isSelected,
   });
 
   final String image;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +20,12 @@ class AllExpensesItemHeader extends StatelessWidget {
           height: 60,
           width: 60,
           decoration: ShapeDecoration(
-            color: Colors.white.withOpacity(0.2),
+            color: Color(0xfffafafa),
             shape: OvalBorder()
           ),
-          child: SvgPicture.asset(image),
+          child: Center(child: SvgPicture.asset(image,color: isSelected ? Colors.white:Colors.red,)),
         ),
-        // CircleAvatar(
-        //     backgroundColor: Colors.grey.withOpacity(0.2),
-        //     maxRadius: 25,
-        //     child: Padding(
-        //       padding: const EdgeInsets.all(5),
-        //       child: SvgPicture.asset(image),
-        //     )),
+        const Spacer(),
         Icon(
           Icons.arrow_forward_ios,
           color: AppColors.navyBlue,

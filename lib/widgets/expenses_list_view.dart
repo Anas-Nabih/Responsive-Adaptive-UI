@@ -22,20 +22,23 @@ class _ExpensesListViewState extends State<ExpensesListView> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: 3,
-        itemBuilder: (context, index) =>
-            GestureDetector(
-                onTap: () {
-                  if(selectedExpenses != index){
-                    setState(() => selectedExpenses = index);
-                  }
-                },
-                child: ExpensesItem(itemModel: expensesList[index],activeExpenses: selectedExpenses == index,)),
-      ),
+    return Row(
+      children: expensesList.asMap().entries.map((e) {
+        final index = e.key;
+        final item = e.value;
+        return Expanded(
+          child: GestureDetector(
+            onTap: () {
+              if(selectedExpenses != index){
+                setState(() => selectedExpenses = index);
+              }
+            },
+            child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+                child: ExpensesItem(itemModel: item,activeExpenses: selectedExpenses == index,)),
+          ),
+        );
+      }).toList(),
     );
   }
 }

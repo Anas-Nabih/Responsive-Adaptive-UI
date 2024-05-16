@@ -8,10 +8,11 @@ import 'package:responsive_adaptive_ui/widgets/all_expenses_item_header.dart';
 class ActiveExpensesItem extends StatelessWidget {
   const ActiveExpensesItem({
     super.key,
-    required this.itemModel,
+    required this.itemModel, required this.isSelected,
   });
 
   final ExpensesItemModel itemModel;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -49,27 +50,30 @@ class ActiveExpensesItem extends StatelessWidget {
 class InActiveExpensesItem extends StatelessWidget {
   const InActiveExpensesItem({
     super.key,
-    required this.itemModel,
+    required this.itemModel, required this.isSelected,
   });
 
   final ExpensesItemModel itemModel;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
       padding: EdgeInsets.symmetric(horizontal: 20,vertical: 16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.white,
       border: Border.all(color: Colors.grey.withOpacity(0.2))),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpensesItemHeader(image: itemModel.image),
-          Text(itemModel.title,style: AppStyles.styleRegular14(context)),
+          AllExpensesItemHeader(image: itemModel.image,isSelected: isSelected,),
+          const SizedBox(height: 34,),
+          Text(itemModel.title,style: AppStyles.styleMedium16(context)),
+          const SizedBox(height: 8,),
           Text(itemModel.date,style: AppStyles.styleRegular14(context)),
-          SizedBox(height: 20),
-          Text("\$${itemModel.price}",style: AppStyles.styleRegular14(context)),
+          SizedBox(height: 16),
+          Text("\$${itemModel.price}",style: AppStyles.styleSemiBold24(context)),
         ],
       ),
     );

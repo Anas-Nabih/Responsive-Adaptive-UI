@@ -17,30 +17,20 @@ class ActiveExpensesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
-      padding: EdgeInsets.all(12),
+      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: AppColors.activeColor),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              CircleAvatar(
-                  backgroundColor: Colors.white.withOpacity(0.2),
-                  maxRadius:
-                  25,
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: SvgPicture.asset(itemModel.image,color: Colors.white),
-                  )),
-              Icon(Icons.arrow_forward_ios)
-            ],
-          ),
-          Text(itemModel.title,style: AppStyles.styleRegular14(context)),
-          Text(itemModel.date,style: AppStyles.styleRegular14(context)),
-          SizedBox(height: 20),
-          Text("\$${itemModel.price}",style: AppStyles.styleRegular14(context)),
+          AllExpensesItemHeader(image: itemModel.image,isSelected: isSelected,),
+          const SizedBox(height: 34,),
+          Text(itemModel.title,style: AppStyles.styleMedium16(context).copyWith(color: Colors.white)),
+          SizedBox(height: 8),
+          Text(itemModel.date,style: AppStyles.styleRegular14(context).copyWith(color: Color(0xfffafafa))),
+          SizedBox(height: 16),
+          Text("\$${itemModel.price}",style: AppStyles.styleSemiBold24(context).copyWith(color: Colors.white)),
         ],
       ),
     );

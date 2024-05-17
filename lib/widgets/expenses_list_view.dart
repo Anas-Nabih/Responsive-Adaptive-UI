@@ -30,7 +30,7 @@ class _ExpensesListViewState extends State<ExpensesListView> {
           child: GestureDetector(
             onTap: () {
               if(selectedExpenses != index){
-                setState(() => selectedExpenses = index);
+                updateIndex(index);
               }
             },
             child: Padding(
@@ -40,5 +40,9 @@ class _ExpensesListViewState extends State<ExpensesListView> {
         );
       }).toList(),
     );
+  }
+
+  updateIndex(int index){
+    setState(() => selectedExpenses = index);
   }
 }

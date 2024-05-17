@@ -20,15 +20,15 @@ class AllExpensesItemHeader extends StatelessWidget {
           height: 60,
           width: 60,
           decoration: ShapeDecoration(
-            color: Color(0xfffafafa),
+            color: isSelected ? Colors.white.withOpacity(0.1):Color(0xfffafafa),
             shape: OvalBorder()
           ),
-          child: Center(child: SvgPicture.asset(image,color: isSelected ? Colors.white:Colors.red,)),
+          child: Center(child: SvgPicture.asset(image,colorFilter:ColorFilter.mode( isSelected ? Colors.white:Color(0xff4eb7f2), BlendMode.srcIn),)),
         ),
         const Spacer(),
         Icon(
           Icons.arrow_forward_ios,
-          color: AppColors.navyBlue,
+          color: isSelected ? Colors.white: AppColors.navyBlue,
         )
       ],
     );

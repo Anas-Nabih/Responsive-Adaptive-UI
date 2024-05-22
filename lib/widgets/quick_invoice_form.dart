@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_adaptive_ui/utils/app_colors.dart';
 import 'package:responsive_adaptive_ui/utils/app_styles.dart';
-import 'package:responsive_adaptive_ui/widgets/custom_background_container.dart';
 import 'package:responsive_adaptive_ui/widgets/custom_button.dart';
 import 'package:responsive_adaptive_ui/widgets/custom_text_field.dart';
 
@@ -54,7 +53,6 @@ class QuickInvoiceForm extends StatelessWidget {
         ),
         Row(
           children: [
-
             Expanded(
               child: CustomButton(
                 backGroundColor: Colors.transparent,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_adaptive_ui/utils/app_styles.dart';
+import 'package:responsive_adaptive_ui/widgets/custom_divider.dart';
 import 'package:responsive_adaptive_ui/widgets/headline.dart';
 import 'package:responsive_adaptive_ui/widgets/latest_transaction_list_view.dart';
 import 'package:responsive_adaptive_ui/widgets/quick_invoice_form.dart';
@@ -21,12 +22,10 @@ class LatestTransaction extends StatelessWidget {
           height: 10,
         ),
         LatestTransactionListView(),
-        Divider(
-          height: 48,
-          color: Color(0xffF1F1F1),
-        ),
+        CustomDivider (height: 48),
         QuickInvoiceForm(),
       ],
     );
   }
 }
+

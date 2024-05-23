@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_adaptive_ui/utils/app_colors.dart';
 import 'package:responsive_adaptive_ui/utils/app_images.dart';
@@ -14,11 +12,13 @@ class MyCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 420 / 215,
+      aspectRatio: 420 / 225,
       child: Container(
+        margin: EdgeInsets.only(right: 10),
         decoration: ShapeDecoration(
-            image:
-                DecorationImage(image: AssetImage(Assets.imagesCardBackground),fit: BoxFit.fill),
+            image: DecorationImage(
+                image: AssetImage(Assets.imagesCardBackground),
+                fit: BoxFit.fill),
             color: AppColors.activeColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12))),
@@ -26,10 +26,11 @@ class MyCardItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              contentPadding: EdgeInsets.only(top: 16,right: 42,left: 31),
+              contentPadding: EdgeInsets.only(top: 16, right: 42, left: 31),
               title: Text(
                 "Card Name",
-                style: AppStyles.styleRegular16(context).copyWith(color: Colors.white),
+                style: AppStyles.styleRegular16(context)
+                    .copyWith(color: Colors.white),
               ),
               subtitle:
                   Text("Card Holder", style: AppStyles.styleMedium20(context)),
@@ -43,16 +44,20 @@ class MyCardItem extends StatelessWidget {
                 children: [
                   Text(
                     "0236 3698 1437 6458",
-                    style: AppStyles.styleSemiBold24(context).copyWith(color: Colors.white),
+                    style: AppStyles.styleSemiBold24(context)
+                        .copyWith(color: Colors.white),
                   ),
                   Text(
                     "12/20 - 124",
-                    style: AppStyles.styleRegular16(context).copyWith(color: Colors.white),
+                    style: AppStyles.styleRegular16(context)
+                        .copyWith(color: Colors.white),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 26,)
+            SizedBox(
+              height: 26,
+            )
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
- import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_adaptive_ui/widgets/custom_background_container.dart';
 import 'package:responsive_adaptive_ui/widgets/header_with_dropdown_sahpe.dart';
 import 'package:responsive_adaptive_ui/widgets/income_chart.dart';
@@ -18,11 +18,11 @@ class IncomeSection extends StatelessWidget {
           HeaderWithDropDownShape(label: "Income"),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-          Expanded( child: IncomeChart()),
-          Expanded(child: IncomeDetails())
-                      ],
-                    ),
+            children: [
+              Expanded(child: IncomeChart()),
+              Expanded(flex: 2, child: IncomeDetails())
+            ],
+          ),
         ],
       ),
     );

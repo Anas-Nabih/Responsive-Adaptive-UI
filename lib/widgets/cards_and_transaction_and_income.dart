@@ -24,7 +24,7 @@ class CardsAndTransactionAndIncomeSection extends StatelessWidget {
             height: 24,
           ),
         ),
-        SliverFillRemaining(child: Expanded(child: IncomeSection()))
+        SliverToBoxAdapter(child: IncomeSection())
       ],
     );
   }

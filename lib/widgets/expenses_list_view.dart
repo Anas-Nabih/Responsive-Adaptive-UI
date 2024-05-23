@@ -34,7 +34,7 @@ class _ExpensesListViewState extends State<ExpensesListView> {
               }
             },
             child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+                padding: EdgeInsets.only(right: index == 2 ? 0 : index == 1 ? 6 : 12,left: index == 2 ? 6 :0),
                 child: ExpensesItem(itemModel: item,activeExpenses: selectedExpenses == index,)),
           ),
         );

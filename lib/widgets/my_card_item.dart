@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_adaptive_ui/utils/app_colors.dart';
@@ -55,8 +56,10 @@ class MyCardItem extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 26,
+            Flexible(
+              child: SizedBox(
+                height: 26,
+              ),
             )
           ],
         ),

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_adaptive_ui/models/drawer_item_model.dart';
 import 'package:responsive_adaptive_ui/utils/app_images.dart';
 import 'package:responsive_adaptive_ui/widgets/drawer_item.dart';
@@ -24,7 +26,7 @@ class DrawerFooterItems extends StatelessWidget {
               isActive: false),
           DrawerItem(
               drawerItemModel: DrawerItemModel(
-                  image: Assets.imagesLogout, title: "Logout account"),
+                  image: Assets.imagesLogout, title: "Logout accountaccount"),
               isActive: false),
           SizedBox(
             height: 48,

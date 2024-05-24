@@ -16,19 +16,32 @@ class AllExpensesItemHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 60,
-          width: 60,
-          decoration: ShapeDecoration(
-            color: isSelected ? Colors.white.withOpacity(0.1):Color(0xfffafafa),
-            shape: OvalBorder()
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 60,maxHeight: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                    color: isSelected
+                        ? Colors.white.withOpacity(0.1)
+                        : Color(0xfffafafa),
+                    shape: OvalBorder()),
+                child: Center(
+                    child: SvgPicture.asset(
+                  image,
+                  colorFilter: ColorFilter.mode(
+                      isSelected ? Colors.white : Color(0xff4eb7f2),
+                      BlendMode.srcIn),
+                )),
+              ),
+            ),
           ),
-          child: Center(child: SvgPicture.asset(image,colorFilter:ColorFilter.mode( isSelected ? Colors.white:Color(0xff4eb7f2), BlendMode.srcIn),)),
         ),
         const Spacer(),
         Icon(
           Icons.arrow_forward_ios,
-          color: isSelected ? Colors.white: AppColors.navyBlue,
+          color: isSelected ? Colors.white : AppColors.navyBlue,
         )
       ],
     );

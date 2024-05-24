@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_adaptive_ui/utils/app_colors.dart';
+import 'package:responsive_adaptive_ui/utils/size_config.dart';
 
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {
@@ -74,7 +77,7 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle styleRegular14(BuildContext context) {
+  static  TextStyle styleRegular14(BuildContext context) {
     return TextStyle(
       color: const Color(0xFFAAAAAA),
       fontSize: getResponsiveFontSize(context, fontSize: 14),
@@ -112,13 +115,12 @@ double getScaleFactor(context) {
   // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
   // double width = physicalWidth / devicePixelRatio;
 
-  // double width = MediaQuery.sizeOf(context).width;
-  // if (width < SizeConfig.tablet) {
-  //   return width / 550;
-  // } else if (width < SizeConfig.desktop) {
-  //   return width / 1000;
-  // } else {
-  //   return width / 1920;
-  // }
-  return 1;
+  double width = MediaQuery.sizeOf(context).width;
+  if (width < SizeConfig.tabletBreakPoint) {
+    return width / 550;
+  } else if (width < SizeConfig.desktopBreakPoint) {
+    return width / 1000;
+  } else {
+    return width / 1920;
+  }
 }
